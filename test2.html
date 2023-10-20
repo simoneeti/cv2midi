@@ -1,0 +1,26 @@
+<video autoplay="true" id="videoElement"></video>
+<script src="https://cdn.jsdelivr.net/npm/pixelmatch@5.3.0"></script>
+
+<script>
+  var video = document.querySelector("#videoElement");
+
+  if (navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices
+      .getUserMedia({ video: true })
+      .then(function (stream) {
+        video.srcObject = stream;
+      })
+      .catch(function (err0r) {
+        console.log("Something went wrong!");
+      });
+  }
+  <!-- const img1 = img1Context.getImageData(0, 0, width, height); -->
+  <!-- const img2 = img2Context.getImageData(0, 0, width, height); -->
+  <!-- const diff = diffContext.createImageData(width, height); -->
+  <!---->
+  <!-- pixelmatch(img1.data, img2.data, diff.data, width, height, { -->
+  <!--   threshold: 0.1, -->
+  <!-- }); -->
+  <!---->
+  <!-- diffContext.putImageData(diff, 0, 0); -->
+</script>
